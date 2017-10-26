@@ -20,9 +20,10 @@ class TagsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, array('name' => 'required|max:255'));
-        $tag = new Tag;
-        $tag->name = $request->name;
-        $tag->save();
+
+
+        $tag=Tag::create(['name'=>$request->name]);
+
 
         Session::flash('success', 'New Tag was successfully created!');
 

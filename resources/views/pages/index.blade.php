@@ -372,12 +372,9 @@
 
                 <div class="col-md-6">
                     <div class="adv">
-                        <img src="img/ad1.jpg">
-                        <a class="link btn btn-default" href="https:facebook.com">Facebook</a>
-                    </div>
-                    <div class="adv">
-                        <img src="img/ad1.jpg">
-                        <a class="link btn btn-primary" href="https://google.com">Go to google</a>
+                        @foreach($advs as $adv)
+                            <a href="{{$adv->link}}"><img style="width:100%; " src="/storage/advImages/{{$adv->adv_image}}"></div>
+                        @endforeach
                     </div>
                 </div>
 

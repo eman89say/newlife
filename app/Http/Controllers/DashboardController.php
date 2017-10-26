@@ -25,12 +25,12 @@ class DashboardController extends Controller{
 
     public function getContact(){
         $contacts = Contact::latest()->paginate(5);
-        return view('dashboard.pages.contacts',compact('contacts'));
+        return view('dashboard.pages.contact.contacts',compact('contacts'));
     }
 
 
     public function getSingleContact(Contact $contact){
-        return view('dashboard.pages.showContact')->withContact($contact);
+        return view('dashboard.pages.contact.showContact')->withContact($contact);
 
     }
 

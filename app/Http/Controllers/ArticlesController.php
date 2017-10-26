@@ -36,7 +36,7 @@ class ArticlesController extends Controller
     public function index(){
         $articles= Article::with('category')->latest()->paginate(5);
        
-       return view('dashboard.articles.index')->withArticles($articles);
+       return view('dashboard.articles.index',compact('articles'));
     }
 
 
@@ -46,7 +46,7 @@ class ArticlesController extends Controller
     public function create(){
         $categories= Category::all();
         $tags=Tag::all();
-        return view('dashboard.articles.create')->withCategories($categories)->withTags($tags);
+        return view('dashboard.articles.create',compact('categories','tags'));
     }
 
 
@@ -137,7 +137,7 @@ class ArticlesController extends Controller
 
         $article = Article::findOrFail($article_id);
 
-        $this->helperObj->deleteImage($article);
+        $this->helperObj->deleteImage($article->cover_image);
 
         $article->delete();
 

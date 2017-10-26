@@ -24,9 +24,10 @@
          @if(Auth::user())
             <ul class="nav navbar-nav">
                     <li class="active"><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="">Pages</a></li>
                     <li><a href="{{route('articles.index')}}">Articles</a></li>
                     <li><a href="{{route('categories.index')}}">Categories</a></li>
+                <li><a href="/dashboard/contacts">Contacts</a></li>
+
             </ul>
            @endif
             <!-- Right Side Of Navbar -->

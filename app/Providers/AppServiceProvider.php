@@ -31,7 +31,16 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('layouts.sidebar', function ($view){
             $populars=\App\Article::populars();
-            $view->with(compact('populars'));
+            $advs=\App\Advertizement::advs();
+
+            $view->with(compact('populars','advs'));
+
+        });
+
+        view()->composer('pages.index', function ($view){
+            $advs=\App\Advertizement::advs();
+
+            $view->with(compact('advs'));
 
         });
 

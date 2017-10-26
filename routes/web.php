@@ -22,6 +22,12 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/contacts','DashboardController@getContact')->name('dash.contact');
     Route::get('/contacts/{contact}','DashboardController@getSingleContact')->name('dash.singelContact');
 
+    Route::get('/adv','AdvertizementController@index');
+    Route::post('/adv','AdvertizementController@store');
+    Route::put('/adv/{adv}/choose','AdvertizementController@choose');
+    Route::delete('/adv/{adv}','AdvertizementController@destroy');
+
+
     Route::resource('/articles', 'ArticlesController');
 
     Route::put('/articles/{article_id}/publish', 'ArticlesController@publish')->name('articles.publish');

@@ -26,9 +26,9 @@
         </div>
 
         <div class="adv-sub">
-            <img src="/img/ad1.jpg">
-            <a class="link btn btn-primary" href="https://google.com">Go to google</a>
-
+            @foreach($advs as $adv)
+                <a href="{{$adv->link}}"><img style="width:100%; " src="/storage/advImages/{{$adv->adv_image}}">
+           @endforeach
         </div>
 
 

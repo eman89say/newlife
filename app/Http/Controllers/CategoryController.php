@@ -21,7 +21,7 @@ class CategoryController extends Controller
     {
         // display a view of al categories
         $categories= Category::all();
-        return view('dashboard.categories.index')->withCategories($categories);
+        return view('dashboard.categories.index',compact('categories'));
         // form to create new category
     }
 
@@ -32,9 +32,8 @@ class CategoryController extends Controller
             'name'=> 'required|max:255|unique:categories,name'
         ));
 
-        $category= new Category();
-        $category->name=$request->name;
-        $category->save();
+       $category= Category::create(['name'=>$request->name]);
+
 
         Session::flash('success','New Category has been created');
         return redirect()->route('categories.index');

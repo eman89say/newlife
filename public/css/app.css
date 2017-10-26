@@ -8328,6 +8328,7 @@ header .page-header {
     margin: 0 30px 20px 70px; }
     .section-d .contianer .adv img {
       height: 240px;
+      width: 100%;
       position: relative; }
     .section-d .contianer .adv .link {
       position: absolute;
@@ -8352,6 +8353,7 @@ header .page-header {
   margin: 20px; }
   .subpage .adv-sub img {
     height: 240px;
+    margin-bottom:20px;
     position: relative; }
   .subpage .adv-sub .link {
     position: absolute;

@@ -16,7 +16,7 @@
                     <h5><strong>By {{$article->user->name}} |</strong> {{ date('M j,Y h:ia', strtotime($article->created_at))}} </h5>
 
 
-                    <img style="width:90%" src="../../storage/cover_images/{{$article->cover_image}}"><br><br>
+                    <img style="width:90%" src="/storage/cover_images/{{$article->cover_image}}"><br><br>
                     <p>{{$article->body}}</p>
 
 

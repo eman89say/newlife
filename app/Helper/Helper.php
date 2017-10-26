@@ -46,11 +46,11 @@ class Helper
      * @param string $uploadFolder
      */
 
-    public function deleteImage(Article $article, $uploadFolder='cover_images')
+    public function deleteImage( $image='cover_image',$uploadFolder='cover_images')
     {
-        if($article->cover_image!= 'noimage.jpg'){
+        if($image!= 'noimage.jpg'){
             //delete Image
-            Storage::delete('public/'.$uploadFolder.'/'.$article->cover_image);
+            Storage::delete('public/'.$uploadFolder.'/'.$image);
         }
 
 
